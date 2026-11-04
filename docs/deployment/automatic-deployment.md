@@ -2,9 +2,10 @@
 
 ## Status
 
-The local MRA repository is not connected to GitHub. The authenticated Vercel
-account has no MRA project. No Preview or Production deployment has been
-created, and no deployment URL exists yet.
+The public GitHub repository is
+[`arkhielofficial-a11y/MRA`](https://github.com/arkhielofficial-a11y/MRA).
+The authenticated Vercel account currently has no MRA project. No Preview or
+Production deployment has been created, and no deployment URL exists yet.
 
 ## After the repository is connected
 

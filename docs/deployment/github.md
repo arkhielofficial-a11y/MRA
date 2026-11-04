@@ -21,6 +21,12 @@ To enable automatic Preview deployments:
 5. Do not commit credentials or environment files. Vercel Git integration
    deploys branch pushes and pull requests after the repository is connected.
 
-No GitHub credentials or Vercel credentials are stored in this repository.
-Current branches and commits remain local; no push or repository creation has
-been attempted.
+The public repository was created at
+[`arkhielofficial-a11y/MRA`](https://github.com/arkhielofficial-a11y/MRA).
+GitHub CLI uses the owner's secure credential store. The GitHub Actions upload
+requires the OAuth `workflow` scope; authorize it through GitHub's official
+device flow before pushing commits that add or change workflow files.
+
+The remote default branch and pushed branch SHAs are verified through the GitHub
+API. Branch protection and required checks still need to be configured in
+GitHub settings. No GitHub credentials are stored in the repository.

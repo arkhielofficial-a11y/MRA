@@ -2,10 +2,11 @@
 
 ## Status
 
-Vercel CLI 62.2.0 is authenticated locally, but the account's visible projects
-do not include MRA. There is no MRA Vercel project or GitHub repository
-connected, no deployment URL, and no deployment has been run. No project,
-database provider, paid resource, or production domain has been created.
+Vercel CLI 62.2.0 is authenticated locally. The GitHub repository exists, but
+the authenticated Vercel account currently only lists the unrelated `simwiky`
+project; no MRA Vercel project or deployment has been created, and no
+deployment URL exists. No database provider, paid resource, or production
+domain has been configured.
 
 ## Monorepo projects
 
