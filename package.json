@@ -1,0 +1,32 @@
+{
+  "name": "mra",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.34.9",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@prisma/client",
+      "@prisma/engines",
+      "esbuild",
+      "prisma"
+    ],
+    "overrides": {
+      "deepmerge-ts": "8.0.2",
+      "multer": "2.5.0"
+    }
+  },
+  "scripts": {
+    "dev": "corepack pnpm --filter @mra/protocol build && corepack pnpm --filter @mra/database build && corepack pnpm --parallel --filter @mra/web --filter @mra/api dev",
+    "build": "corepack pnpm -r --if-present build",
+    "test": "corepack pnpm -r --if-present test",
+    "typecheck": "corepack pnpm --filter @mra/protocol build && corepack pnpm --filter @mra/database build && corepack pnpm -r --if-present typecheck",
+    "db:generate": "corepack pnpm --filter @mra/database db:generate",
+    "db:validate": "corepack pnpm --filter @mra/database db:validate"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mra.invalid/protocol/envelope-v1.json",
+  "title": "MRA Protocol Envelope v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocolVersion", "eventId", "type", "sentAt", "payload"],
+  "properties": {
+    "protocolVersion": { "const": "1" },
+    "eventId": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "type": {
+      "enum": [
+        "connection.hello",
+        "connection.ack",
+        "presence.heartbeat",
+        "match.event"
+      ]
+    },
+    "sentAt": { "type": "string", "format": "date-time" },
+    "requestId": { "type": "string", "maxLength": 80 },
+    "matchId": { "type": "string", "maxLength": 80 },
+    "payload": {}
+  }
+}

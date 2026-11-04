@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "mra",
+  "version": "${version}",
+  "name": "MRA",
+  "description": "MRA client mod foundation. Competitive features are not implemented.",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.mra.client.MraClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.25",
+    "minecraft": "~1.16.1",
+    "fabric-api": "*"
+  }
+}

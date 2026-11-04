@@ -1,0 +1,37 @@
+:root { font-family: "DM Sans", sans-serif; color: #eff2ec; background: #090b0a; font-synthesis: none; text-rendering: optimizeLegibility; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+.launcher { display: grid; grid-template-columns: 230px 1fr; min-height: 100vh; }
+.sidebar { display: flex; flex-direction: column; padding: 28px 18px; border-right: 1px solid #252b25; background: #0d100e; }
+.brand { padding: 0 12px; color: inherit; font: 700 25px "Space Grotesk", sans-serif; letter-spacing: -2px; text-decoration: none; }
+.brand span { color: #b7fa58; }
+.sidebar-label { margin: 54px 12px 14px; color: #788076; font: 500 9px "DM Mono", monospace; letter-spacing: 1px; }
+.side-link { display: flex; gap: 12px; align-items: center; margin: 3px 0; padding: 12px; color: #a4aca2; font-size: 12px; text-decoration: none; border-radius: 3px; }
+.side-link span { font-size: 15px; }
+.side-link.active { color: #c6fc7c; background: #b7fa5810; }
+.side-link.disabled { opacity: .45; cursor: not-allowed; }
+.sidebar-bottom { margin-top: auto; padding: 16px 12px; color: #90998c; font: 500 8px "DM Mono", monospace; letter-spacing: .8px; }
+.status-dot { display: inline-block; width: 6px; height: 6px; margin-right: 6px; border-radius: 50%; background: #b7fa58; }
+.main-panel { min-width: 0; }
+.topbar { height: 70px; display: flex; align-items: center; justify-content: space-between; padding-inline: 40px; border-bottom: 1px solid #252b25; color: #879084; font: 500 9px "DM Mono", monospace; letter-spacing: .8px; }
+.content { width: min(760px, calc(100% - 80px)); margin: 12vh auto 0; }
+.eyebrow { color: #b7fa58; font: 500 10px "DM Mono", monospace; letter-spacing: 1.1px; }
+h1 { margin: 22px 0; font: 600 clamp(48px, 7vw, 76px)/1 "Space Grotesk", sans-serif; letter-spacing: -5px; }
+h1 span { color: #b7fa58; }
+.intro { max-width: 470px; color: #9aa39a; font-size: 14px; line-height: 1.7; }
+.setup-card { display: flex; align-items: center; gap: 16px; margin-top: 40px; padding: 20px; border: 1px solid #252b25; background: #111512; }
+.setup-icon { width: 38px; height: 38px; display: grid; place-items: center; color: #b7fa58; background: #1b2515; font: 700 17px "Space Grotesk", sans-serif; }
+.setup-card strong { font-size: 12px; }
+.setup-card p { margin: 5px 0 0; color: #929b90; font-size: 11px; }
+.tag { margin-left: auto; color: #b7fa58; font: 500 8px "DM Mono", monospace; white-space: nowrap; }
+.play-button { width: 100%; height: 48px; margin-top: 18px; border: 0; background: #293024; color: #90998c; font: 500 10px "DM Mono", monospace; letter-spacing: .8px; }
+.footnote { color: #70796f; font-size: 10px; }
+@media (max-width: 650px) {
+  .launcher { grid-template-columns: 1fr; }
+  .sidebar { flex-direction: row; align-items: center; gap: 12px; padding: 14px 16px; border-right: 0; border-bottom: 1px solid #252b25; }
+  .sidebar-label, .side-link, .sidebar-bottom { display: none; }
+  .content { width: calc(100% - 36px); margin-top: 10vh; }
+  .topbar { padding-inline: 18px; }
+  .setup-card { align-items: flex-start; flex-wrap: wrap; }
+  .tag { margin-left: 54px; }
+}

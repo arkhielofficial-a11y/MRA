@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Minimal local window capability for the MRA launcher foundation.",
+  "windows": ["main"],
+  "permissions": ["core:default"]
+}
