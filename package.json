@@ -20,7 +20,7 @@
   },
   "scripts": {
     "dev": "corepack pnpm --filter @mra/protocol build && corepack pnpm --filter @mra/database build && corepack pnpm --parallel --filter @mra/web --filter @mra/api dev",
-    "build": "corepack pnpm -r --if-present build",
+    "build": "corepack pnpm --filter @mra/protocol build && corepack pnpm --filter @mra/database build && corepack pnpm --filter @mra/web build && corepack pnpm --filter @mra/api build && corepack pnpm --filter @mra/launcher build",
     "test": "corepack pnpm -r --if-present test",
     "typecheck": "corepack pnpm --filter @mra/protocol build && corepack pnpm --filter @mra/database build && corepack pnpm -r --if-present typecheck",
     "db:generate": "corepack pnpm --filter @mra/database db:generate",
