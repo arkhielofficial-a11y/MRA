@@ -2,17 +2,30 @@
 
 ## Status
 
-Vercel CLI 62.2.0 is authenticated locally. The GitHub repository exists, but
-the authenticated Vercel account currently only lists the unrelated `simwiky`
-project; no MRA Vercel project or deployment has been created, and no
-deployment URL exists. No database provider, paid resource, or production
-domain has been configured.
+Vercel CLI 62.2.0 is authenticated locally. Two projects have been created in
+the `kaki14` scope, connected to the public GitHub repository
+[`arkhielofficial-a11y/MRA`](https://github.com/arkhielofficial-a11y/MRA), and
+configured:
+
+| Project | Root Directory | Framework | Node.js |
+|---|---|---|---|
+| `mra-web` | `apps/web` | Next.js | 22.x |
+| `mra-api` | `apps/api` | NestJS | 22.x |
+
+Both projects have `main` set as the Production Branch, and the dashboard
+confirms **Include files outside the root directory in the Build Step** is
+enabled. The first manual deployment attempt for `development` failed during
+the protocol TypeScript build because `@types/node` was not declared by that
+workspace; this has been fixed locally. Vercel unexpectedly marked that failed
+attempt as `production` even though its dashboard dialog offered a Preview
+deployment. There is no successful Production deployment or custom domain.
+The automatic Preview deployment still needs to be verified after pushing the
+fix to `development`. Local Vercel project links are ignored by Git.
 
 ## Monorepo projects
 
-Vercel documents one project per app directory in a monorepo. After the MRA
-repository is available in GitHub, create two Vercel projects from that same
-repository:
+Vercel documents one project per app directory in a monorepo. These two
+projects use the same GitHub repository:
 
 1. **MRA web**: Root Directory `apps/web`, framework preset Next.js.
 2. **MRA API**: Root Directory `apps/api`, framework preset NestJS.
@@ -40,11 +53,11 @@ pool sizing must be tested separately before adding production DB routes.
 
 ## Branch deployments
 
-Set `main` as Production Branch in both projects. With Vercel's GitHub
-integration, non-production branch pushes (including `development`) and pull
-requests create Preview deployments; commits to `main` create Production
-deployments. Protect `main` in GitHub with review and the required CI check.
-See [automatic deployment workflow](automatic-deployment.md).
+With Vercel's GitHub integration, non-production branch pushes (including
+`development`) and pull requests create Preview deployments; commits to `main`
+create Production deployments. The `main` Production Branch setting is
+confirmed for both projects. Protect `main` in GitHub with review and the
+required CI check. See [automatic deployment workflow](automatic-deployment.md).
 
 ## Environment variables
 

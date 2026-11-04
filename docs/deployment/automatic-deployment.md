@@ -4,17 +4,21 @@
 
 The public GitHub repository is
 [`arkhielofficial-a11y/MRA`](https://github.com/arkhielofficial-a11y/MRA).
-The authenticated Vercel account currently has no MRA project. No Preview or
-Production deployment has been created, and no deployment URL exists yet.
+The `main` and `development` branches are pushed and connected to Vercel
+projects `mra-web` and `mra-api`. Both projects use `main` as the Production
+Branch. An initial manual deployment attempt for `development` failed; Vercel
+reported the deployment target as `production` despite the dashboard's Preview
+action. The TypeScript dependency error is fixed locally, but a successful
+automatic Preview build has not yet been verified. No successful Production
+deployment or custom domain is configured.
 
-## After the repository is connected
+## After the build fix is pushed
 
-1. Push `main` and `development` to the GitHub repository.
-2. Connect the repository to Vercel through Vercel's official GitHub App.
-3. Create two Vercel projects from the same monorepo, configured as described
-   in [Vercel](vercel.md).
-4. Set `main` as the Production Branch in both projects.
-5. Configure GitHub branch protection for `main`: require pull requests and
+1. Push the validated change to `development` and verify Vercel creates a
+   Preview deployment for each project.
+2. Verify each deployment's target, Ready status, site, and API
+   `/api/v1/health` endpoint.
+3. Configure GitHub branch protection for `main`: require pull requests and
    the `validate` CI job before merging; disallow direct pushes and force
    pushes. Keep branch-protection rules in GitHub settings rather than granting
    this repository's CI write permission.

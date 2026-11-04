@@ -134,7 +134,11 @@ importers:
         specifier: 6.19.3
         version: 6.19.3(typescript@5.9.3)
 
-  packages/protocol: {}
+  packages/protocol:
+    devDependencies:
+      '@types/node':
+        specifier: ^24.10.0
+        version: 24.19.2
 
 packages:
 
