@@ -2,7 +2,8 @@
 
 The initial Prisma schema contains:
 
-- `User`: normalized-email identity key, password-hash field, role, timestamps.
+- `User`: unique email field (future account writes must normalize case),
+  password-hash field, role, timestamps.
 - `Session`: unique token hash, user relation, expiry, creation time, expiry and
   user/expiry indexes.
 - `PlayerProfile`: one profile per account and an optional unique Minecraft
